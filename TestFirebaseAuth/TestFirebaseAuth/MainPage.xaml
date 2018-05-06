@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestFirebaseAuth"
+             x:Class="TestFirebaseAuth.MainPage">
+    <StackLayout>
+        <Button x:Name="Auth" VerticalOptions="CenterAndExpand" Text="Вход!"/>
+        <Button x:Name="Out" VerticalOptions="CenterAndExpand" Text="Выход!"/>
+        <Label x:Name="TestLabel" Text="Nothing Happend"  Margin="10"/>
+        <Label x:Name="Res" Text="No Result" Margin="10"/>
+    </StackLayout>
+
+</ContentPage>
