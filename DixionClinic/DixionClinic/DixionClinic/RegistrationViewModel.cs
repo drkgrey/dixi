@@ -32,6 +32,7 @@ namespace DixionClinic
             try
             {
                 token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
+                IsValidUser = true;
             }
             catch
             {
@@ -40,7 +41,7 @@ namespace DixionClinic
             }
             if (IsValidUser)
             {
-                Navigation.InsertPageBefore(new HomePage(), regInfo.Page);
+                Navigation.InsertPageBefore(new MainPage(), regInfo.Page);
                 await Navigation.PopAsync();
             }
         }

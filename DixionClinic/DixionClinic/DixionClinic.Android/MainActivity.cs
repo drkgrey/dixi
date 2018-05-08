@@ -27,9 +27,9 @@ namespace DixionClinic.Droid
                     .SetApiKey("AIzaSyDLMCTWPYA-BwFQBrm26t7N8rxCDFqSnd4")
                     .Build();
 
-            FirebaseApp.InitializeApp(this, options);
+            FirebaseApp.InitializeApp(this, options, "a");
 
-            var app = FirebaseApp.Instance;
+            //var app = FirebaseApp.Instance;
 
             LoadApplication(new App(new FirebaseAutenticator()));
         }
