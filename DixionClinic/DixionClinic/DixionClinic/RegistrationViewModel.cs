@@ -15,7 +15,7 @@ namespace DixionClinic
 
         IRegistration regInfo;
         IFirebaseAuthenticator firebaseAuthenticator;
-        bool IsValidUser = true;
+        bool IsValidUser = false;
 
         public RegistrationViewModel(IRegistration reg, IFirebaseAuthenticator authenticator)
         {
@@ -28,7 +28,7 @@ namespace DixionClinic
 
         async void GoToHomePage()
         {
-            var token = "";
+            var token = "1";
             try
             {
                 token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
@@ -36,11 +36,11 @@ namespace DixionClinic
             }
             catch
             {
-                IsValidUser = false;
                 regInfo.IsVisibleValidDataLabel = true;
             }
-            if (IsValidUser)
+            if (token != "1")
             {
+                regInfo.IsVisibleValidDataLabel = false;
                 Navigation.InsertPageBefore(new MainPage(), regInfo.Page);
                 await Navigation.PopAsync();
             }

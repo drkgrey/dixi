@@ -21,7 +21,7 @@ namespace DixionClinic
         {
             InitializeComponent();
             BindingContext = new MainPageMasterViewModel();
-            //ListView = MenuItemsListView;
+            ListView = MenuItemsListView;
         }        
     }
 }
