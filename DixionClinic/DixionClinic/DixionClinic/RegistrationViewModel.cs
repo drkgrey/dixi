@@ -15,7 +15,6 @@ namespace DixionClinic
 
         IRegistration regInfo;
         IFirebaseAuthenticator firebaseAuthenticator;
-        bool IsValidUser = false;
 
         public RegistrationViewModel(IRegistration reg, IFirebaseAuthenticator authenticator)
         {
@@ -32,7 +31,6 @@ namespace DixionClinic
             try
             {
                 token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
-                IsValidUser = true;
             }
             catch
             {
