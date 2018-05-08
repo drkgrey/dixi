@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DixionClinic.Droid</RootNamespace>
     <AssemblyName>DixionClinic.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -50,12 +50,18 @@
     <PackageReference Include="Xamarin.Firebase.Auth">
       <Version>42.1021.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Messaging">
+      <Version>42.1021.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Base">
+      <Version>42.1021.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Basement">
       <Version>42.1021.1</Version>
     </PackageReference>
@@ -63,6 +69,7 @@
   <ItemGroup>
     <Compile Include="FirebaseAutenticator.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyFirebaseIIDService.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

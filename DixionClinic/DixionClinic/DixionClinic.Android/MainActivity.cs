@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Android.Gms.Common;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Firebase;
+using Firebase.Messaging;
+using Firebase.Iid;
+using Android.Util;
 
 namespace DixionClinic.Droid
 {
