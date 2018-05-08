@@ -388,11 +388,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
       "projectName": "DixionClinic",
-      "projectPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\obj\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

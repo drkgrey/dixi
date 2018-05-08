@@ -4,8 +4,8 @@ namespace DixionClinic
 {
     interface IRegistration
     {
-        string Login { get; set; }
-        string Password { get; set; }
+        string Login { get; }
+        string Password { get; }
         bool IsVisibleValidDataLabel { set; }
         Page Page { get; }
     }

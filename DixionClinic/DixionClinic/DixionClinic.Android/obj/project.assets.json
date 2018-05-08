@@ -875,11 +875,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.Android\\DixionClinic.Android.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.Android\\DixionClinic.Android.csproj",
       "projectName": "DixionClinic.Android",
-      "projectPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.Android\\DixionClinic.Android.csproj",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.Android\\DixionClinic.Android.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.Android\\obj\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -900,8 +900,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
-              "projectPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
+            "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
+              "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
             }
           }
         }

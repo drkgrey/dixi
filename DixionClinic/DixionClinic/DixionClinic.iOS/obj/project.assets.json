@@ -760,11 +760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
       "projectName": "DixionClinic.iOS",
-      "projectPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -785,8 +785,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
-              "projectPath": "F:\\MedDev\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
+            "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
+              "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
             }
           }
         }
