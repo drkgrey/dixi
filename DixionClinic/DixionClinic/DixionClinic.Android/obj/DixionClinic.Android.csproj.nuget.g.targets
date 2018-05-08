@@ -25,6 +25,8 @@
     <Import Project="$(NuGetPackageRoot)xamarin.android.support.design\25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.android.support.design\25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.forms\2.5.0.280555\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\2.5.0.280555\build\netstandard1.0\Xamarin.Forms.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.firebase.common\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Common.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.firebase.common\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Common.targets')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.firebase.iid\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Iid.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.firebase.iid\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Iid.targets')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.firebase.messaging\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Messaging.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.firebase.messaging\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Messaging.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.firebase.auth\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Auth.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.firebase.auth\42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Auth.targets')" />
   </ImportGroup>
 </Project>

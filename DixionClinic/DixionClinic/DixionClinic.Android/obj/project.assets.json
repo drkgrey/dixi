@@ -304,6 +304,39 @@
           "build/MonoAndroid70/Xamarin.Firebase.Common.targets": {}
         }
       },
+      "Xamarin.Firebase.Iid/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Firebase.Common": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.Firebase.Iid.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.Firebase.Iid.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.Firebase.Iid.targets": {}
+        }
+      },
+      "Xamarin.Firebase.Messaging/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Firebase.Common": "[42.1021.1]",
+          "Xamarin.Firebase.Iid": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.Firebase.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.Firebase.Messaging.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.Firebase.Messaging.targets": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.280555": {
         "type": "package",
         "dependencies": {
@@ -629,6 +662,28 @@
         "xamarin.firebase.common.nuspec"
       ]
     },
+    "Xamarin.Firebase.Iid/42.1021.1": {
+      "sha512": "iVCqEPeoiJLnYNy0YTIM8jqcfo66TgG0hTH5UGhIEQA6ImEMAA8e4EfgrbYsNNfQ1lo1bPp36l/2pLvmt61FWw==",
+      "type": "package",
+      "path": "xamarin.firebase.iid/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.Firebase.Iid.targets",
+        "lib/MonoAndroid70/Xamarin.Firebase.Iid.dll",
+        "xamarin.firebase.iid.42.1021.1.nupkg.sha512",
+        "xamarin.firebase.iid.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.Messaging/42.1021.1": {
+      "sha512": "Db19/nSmIRZLOuTgQJhTbC/l67cZl2iRHJ0+tiuBR+Ui3AmdzEpGqj9X2TP3jG/jMSQg5dXPXc9MT5Qamb1Erw==",
+      "type": "package",
+      "path": "xamarin.firebase.messaging/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.Firebase.Messaging.targets",
+        "lib/MonoAndroid70/Xamarin.Firebase.Messaging.dll",
+        "xamarin.firebase.messaging.42.1021.1.nupkg.sha512",
+        "xamarin.firebase.messaging.nuspec"
+      ]
+    },
     "Xamarin.Forms/2.5.0.280555": {
       "sha512": "JVmozDJQNKEVhN4NG5EiG2IBua0+xK9b+t1L/VUN9HeIXkc8BubZM6UnnE1CftlGt0U2+JGTQSL79uxpx0KCpQ==",
       "type": "package",
@@ -864,7 +919,9 @@
       "Xamarin.Android.Support.v7.CardView >= 25.4.0.2",
       "Xamarin.Android.Support.v7.MediaRouter >= 25.4.0.2",
       "Xamarin.Firebase.Auth >= 42.1021.1",
+      "Xamarin.Firebase.Messaging >= 42.1021.1",
       "Xamarin.Forms >= 2.5.0.280555",
+      "Xamarin.GooglePlayServices.Base >= 42.1021.1",
       "Xamarin.GooglePlayServices.Basement >= 42.1021.1"
     ]
   },
@@ -934,9 +991,17 @@
             "target": "Package",
             "version": "[42.1021.1, )"
           },
+          "Xamarin.Firebase.Messaging": {
+            "target": "Package",
+            "version": "[42.1021.1, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[2.5.0.280555, )"
+          },
+          "Xamarin.GooglePlayServices.Base": {
+            "target": "Package",
+            "version": "[42.1021.1, )"
           },
           "Xamarin.GooglePlayServices.Basement": {
             "target": "Package",

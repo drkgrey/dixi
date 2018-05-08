@@ -754,21 +754,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\11\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
       "projectName": "DixionClinic.iOS",
-      "projectPath": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
-      "packagesPath": "C:\\Users\\11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -780,8 +785,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
-              "projectPath": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
+            "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
+              "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
             }
           }
         }

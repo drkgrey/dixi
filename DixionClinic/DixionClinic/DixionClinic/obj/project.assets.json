@@ -381,24 +381,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\11\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
       "projectName": "DixionClinic",
-      "projectPath": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
-      "packagesPath": "C:\\Users\\11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\11\\source\\repos\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\obj\\",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
