@@ -11,7 +11,7 @@ namespace DixionClinic
     {
         public MainPageMenuItem()
         {
-            TargetType = typeof(MainPageDetail);
+            TargetType = typeof(News);
         }
         public int Id { get; set; }
         public string Title { get; set; }
