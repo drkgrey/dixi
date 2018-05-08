@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DixionClinic.Registration" Title="Страница регистрации" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="icon.png" Grid.Row="0" HeightRequest="80" Margin="0, 20"/>
+            <Entry x:Name="Email" Grid.Row="1" Placeholder="Введите email..." PlaceholderColor="Gray" 
+               VerticalOptions="EndAndExpand" FontSize="Large"
+               Keyboard="Email" />
+            <Entry x:Name="Pass" Grid.Row="2" Placeholder="Введите пароль..." PlaceholderColor="Gray"
+               VerticalOptions="EndAndExpand" FontSize="Large"
+               IsPassword="True"/>
+            <Label x:Name="IsValidData"  Grid.Row="3" TextColor="Red" Text="Неверный логин или пароль!"
+               FontSize="Medium"
+               IsVisible="False" />
+            <Button Grid.Row="4" Text="Войти" FontSize="Medium" Command="{Binding ToHomePage}" HeightRequest="60" BackgroundColor="MediumBlue" TextColor="White"/>
+            <Label Grid.Row="5" Text="Забыли логин или пароль?" TextColor="Gray" FontSize="Medium"
+               HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToForgetPassPage}}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button Grid.Row="6" Text="Зарегистрироваться" BackgroundColor="LightGray" HeightRequest="70" FontSize="Medium" VerticalOptions="EndAndExpand"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
