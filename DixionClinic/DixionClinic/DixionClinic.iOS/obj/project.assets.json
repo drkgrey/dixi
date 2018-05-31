@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.280555": {
         "type": "package",
         "compile": {
@@ -129,6 +138,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
           "Xamarin.Forms": "2.5.0.280555"
         },
         "compile": {
@@ -140,6 +150,15 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.280555": {
         "type": "package",
         "compile": {
@@ -267,6 +286,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
           "Xamarin.Forms": "2.5.0.280555"
         },
         "compile": {
@@ -278,6 +298,15 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.280555": {
         "type": "package",
         "compile": {
@@ -405,6 +434,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
           "Xamarin.Forms": "2.5.0.280555"
         },
         "compile": {
@@ -416,6 +446,15 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.280555": {
         "type": "package",
         "compile": {
@@ -543,6 +582,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
           "Xamarin.Forms": "2.5.0.280555"
         },
         "compile": {
@@ -555,6 +595,34 @@
     }
   },
   "libraries": {
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
     "Xamarin.Forms/2.5.0.280555": {
       "sha512": "JVmozDJQNKEVhN4NG5EiG2IBua0+xK9b+t1L/VUN9HeIXkc8BubZM6UnnE1CftlGt0U2+JGTQSL79uxpx0KCpQ==",
       "type": "package",
@@ -754,26 +822,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "projectUniqueName": "F:\\MedDev\\GitHubRepository\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
       "projectName": "DixionClinic.iOS",
-      "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
+      "projectPath": "F:\\MedDev\\GitHubRepository\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\DixionClinic.iOS.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
+      "outputPath": "F:\\MedDev\\GitHubRepository\\dixi\\DixionClinic\\DixionClinic\\DixionClinic.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -785,8 +848,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
-              "projectPath": "F:\\MedDev\\GitHubRepository\\Новая папка\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
+            "F:\\MedDev\\GitHubRepository\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj": {
+              "projectPath": "F:\\MedDev\\GitHubRepository\\dixi\\DixionClinic\\DixionClinic\\DixionClinic\\DixionClinic.csproj"
             }
           }
         }

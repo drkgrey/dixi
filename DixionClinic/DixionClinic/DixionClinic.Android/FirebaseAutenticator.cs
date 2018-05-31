@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Auth;
+using Firebase.Iid;
 
 namespace DixionClinic.Droid
 {
@@ -20,7 +21,13 @@ namespace DixionClinic.Droid
             var user = await FirebaseAuth.Instance.
                             SignInWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetTokenAsync(false);
+
             return token.Token;
+        }
+
+        public string GetDeviceToken()
+        {
+            return FirebaseInstanceId.Instance.Token;
         }
     }
 }

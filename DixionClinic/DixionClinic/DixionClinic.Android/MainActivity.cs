@@ -10,6 +10,7 @@ using Firebase;
 using Firebase.Messaging;
 using Firebase.Iid;
 using Android.Util;
+using Android.Nfc;
 
 namespace DixionClinic.Droid
 {
@@ -18,15 +19,6 @@ namespace DixionClinic.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            if (Intent.Extras != null)
-            {
-                foreach (var key in Intent.Extras.KeySet())
-                {
-                    var value = Intent.Extras.GetString(key);
-                    Log.Debug(TAG, "Key: {0} Value: {1}", key, value);
-                }
-            }
-
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -39,7 +31,14 @@ namespace DixionClinic.Droid
                     .SetApiKey("AIzaSyDLMCTWPYA-BwFQBrm26t7N8rxCDFqSnd4")
                     .Build();
 
-            FirebaseApp.InitializeApp(this, options);
+            try
+            {
+                FirebaseApp.InitializeApp(this, options);
+            }
+            catch
+            {
+                FirebaseApp.InitializeApp(this, options, "1");
+            }
 
             //var app = FirebaseApp.Instance;
 

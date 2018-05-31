@@ -23,25 +23,28 @@ namespace DixionClinic
             ToHomePage = new Command(GoToHomePage);
             ToForgetPassPage = new Command(GoToForgetPassPage);
             ToSignUpPage = new Command(GoToSignUpPage);
+            
         }
 
         async void GoToHomePage()
         {
-            var token = "1";
-            try
-            {
-                token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
-            }
-            catch
-            {
-                regInfo.IsVisibleValidDataLabel = true;
-            }
-            if (token != "1")
-            {
-                regInfo.IsVisibleValidDataLabel = false;
-                Navigation.InsertPageBefore(new MainPage(), regInfo.Page);
-                await Navigation.PopAsync();
-            }
+            //var token = "1";
+            //try
+            //{
+            //    token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
+            //}
+            //catch
+            //{
+            //    regInfo.IsVisibleValidDataLabel = true;
+            //}
+            //if (token != "1")
+            //{
+            //    regInfo.IsVisibleValidDataLabel = false;
+            //    Navigation.InsertPageBefore(new MainPage(), regInfo.Page);
+            //    await Navigation.PopAsync();
+            //}
+            Navigation.InsertPageBefore(new MainPage(), regInfo.Page);
+            await Navigation.PopAsync();
         }
 
         void GoToForgetPassPage()

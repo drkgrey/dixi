@@ -62,9 +62,9 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Base">
       <Version>42.1021.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.GooglePlayServices.Basement">
+    <!--PackageReference Include="Xamarin.GooglePlayServices.Basement">
       <Version>42.1021.1</Version>
-    </PackageReference>
+    </PackageReference-->
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FirebaseAutenticator.cs" />

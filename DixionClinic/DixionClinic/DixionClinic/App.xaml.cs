@@ -7,17 +7,24 @@ using Xamarin.Forms;
 
 namespace DixionClinic
 {
-	public partial class App : Application
-	{
+    public partial class App : Application
+    {
         public static string Token { get; set; }
-        public IFirebaseAuthenticator FirebaseAuth { get; set; }
+        //IFirebaseAuthenticator FirebaseAuth { get; set; }
+        public string DeviceToken {get; set;}
+        public static string ConnectionString { get; } = "http://arkonlab.website/";
 
+        public App()
+        {
+                
+        }
 
-        public App (IFirebaseAuthenticator authenticator)
+        public App(IFirebaseAuthenticator authenticator)
 		{
 			InitializeComponent();
-            FirebaseAuth = authenticator;
-			MainPage = new NavigationPage(new Registration(FirebaseAuth));
+            DeviceToken = authenticator.GetDeviceToken();
+            //FirebaseAuth = authenticator;
+			MainPage = new NavigationPage(new Registration(authenticator));
 		}
 
 		protected override void OnStart ()
