@@ -24,7 +24,7 @@ namespace DixionClinic
             if (item == null)
                 return;
             if (item.Id == 0)
-                Detail = new NavigationPage(new Specialists()/*Специалисты*/);
+                Detail = new NavigationPage(new Directions()/*Специалисты*/);
             else if (item.Id == 1)
                 Detail = new NavigationPage(new News()/*Новости и акции*/);
             else if (item.Id == 2)

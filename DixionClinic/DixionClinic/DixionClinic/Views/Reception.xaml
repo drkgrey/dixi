@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DixionClinic.Reception" Title="Запись на прием">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Выберите врача" FontAttributes="Bold" FontSize="Large" 
+                   Margin="10,20,0,5" />
+            <Picker x:Name="doctorPicker" HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}"
+                    SelectedIndexChanged="DoctorPicker_SelectedIndexChanged"/>
+            <Picker x:Name="specPicker" HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}"
+                    SelectedIndexChanged="SpecPicker_SelectedIndexChanged" IsEnabled="False"/>
+            <Label Text="Выберите дату" FontAttributes="Bold" FontSize="Large" 
+                   Margin="10,10,0,5"/>
+            <DatePicker x:Name="datePicker" HorizontalOptions="FillAndExpand" Format="D"
+                        DateSelected="DatePicker_DateSelected" IsEnabled="False"/>
+            <Label Text="Доступное время" FontAttributes="Bold" FontSize="Large" 
+                   Margin="10,10,0,5"/>
+            <Picker x:Name="timePicker" IsEnabled="False" SelectedIndexChanged="TimePicker_SelectedIndexChanged"/>
+            <Button x:Name="sign" Text="Записаться на прием" BackgroundColor="MediumBlue" TextColor="White"
+                    Clicked="Sign_Clicked" IsEnabled="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

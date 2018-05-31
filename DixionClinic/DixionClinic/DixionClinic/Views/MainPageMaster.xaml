@@ -19,11 +19,11 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+                        <StackLayout Padding="15,10, 0, 10" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
                             <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    FontSize="24"/>
+                                   VerticalTextAlignment="Start" 
+                                   Text="{Binding Title}" 
+                                   FontSize="Large"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

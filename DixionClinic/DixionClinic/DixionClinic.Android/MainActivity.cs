@@ -11,6 +11,7 @@ using Firebase.Messaging;
 using Firebase.Iid;
 using Android.Util;
 using Android.Nfc;
+using System.Threading.Tasks;
 
 namespace DixionClinic.Droid
 {
@@ -25,6 +26,7 @@ namespace DixionClinic.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            
 
             var options = new FirebaseOptions.Builder()
                     .SetApplicationId("1:986776431713:android:4fab5679aa1289b7")

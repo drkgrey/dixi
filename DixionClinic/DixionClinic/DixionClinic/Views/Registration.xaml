@@ -24,10 +24,10 @@
                FontSize="Medium"
                IsVisible="False" />
             <Button Grid.Row="4" Text="Войти" FontSize="Medium" Command="{Binding ToHomePage}" HeightRequest="60" BackgroundColor="MediumBlue" TextColor="White"/>
-            <Label Grid.Row="5" Text="Забыли логин или пароль?" TextColor="Gray" FontSize="Medium"
+            <Label Grid.Row="5" Text="Забыли логин или пароль?" TextColor="Gray" FontSize="Medium" x:Name="delThis"
                HorizontalOptions="CenterAndExpand">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ToForgetPassPage}}"/>
+                    <TapGestureRecognizer Command="{Binding ToForgetPassPage}"/>
                 </Label.GestureRecognizers>
             </Label>
             <Button Grid.Row="6" Text="Зарегистрироваться" BackgroundColor="LightGray" HeightRequest="70" FontSize="Medium" VerticalOptions="EndAndExpand"/>

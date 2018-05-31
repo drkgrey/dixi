@@ -20,6 +20,9 @@ namespace DixionClinic
         public Registration (IFirebaseAuthenticator authenticator)
 		{
 			InitializeComponent ();
+            //отладка
+            //delThis.Text = authenticator.GetDeviceToken();
+            //конец отладки
             BindingContext = new RegistrationViewModel(this, authenticator) { Navigation = this.Navigation };
         }
     }
