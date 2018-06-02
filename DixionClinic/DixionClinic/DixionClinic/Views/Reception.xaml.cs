@@ -20,35 +20,39 @@ namespace DixionClinic
         readonly TimeSpan final = new TimeSpan(18, 00, 00);
         List<TimeSpan> timeSpans = new List<TimeSpan>();
         List<TimeSpan> buisyTime = new List<TimeSpan>();
-        Specialist[] specialists;
-        Doctor[] doctors;
+        Department[] deps;
+        Doctor[] doc;
         Visit[] visits;
 
         public Reception()
         {
             InitializeComponent();
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            GetDocAndVis();
+            GetDep();
             SetTimeArray();
-            doctorPicker.ItemsSource = doctors;
+            depPicker.ItemsSource = deps;
         }
 
-        public Reception(int specId)
+        public Reception(int depId, int docId)
         {
             InitializeComponent();
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            GetDocAndVis();
+            GetDep();
             SetTimeArray();
 
-            var spec = specialists.Where(e => e.Id == specId).ToArray();
-            specPicker.ItemsSource = spec;
-            specPicker.SelectedItem = specialists.Where(e => e.Id == specId).ToArray()[0];
-            doctorPicker.ItemsSource = doctors.Where(e => e.Id == spec[0].DoctorId).ToArray();
-            doctorPicker.SelectedItem = doctors.Where(e => e.Id == spec[0].DoctorId).ToArray()[0];
+            var dep = deps.Where(e => e.Id == depId).ToArray();
+            depPicker.ItemsSource = dep;
+            depPicker.SelectedItem = dep[0];
+
+            var url = App.ConnectionString + $"api/Departament?name={(depPicker.SelectedItem as Department).Name}";
+            string res = httpClient.GetStringAsync(url).Result;
+            doc = JsonConvert.DeserializeObject<Doctor[]>(res);
+            doctorPicker.ItemsSource = doc;
+            doctorPicker.SelectedItem = doc.Where(e => e.Id == docId).ToArray()[0];
 
             datePicker.IsEnabled = true;
             timePicker.IsEnabled = true;
-            specPicker.IsEnabled = false;
+            depPicker.IsEnabled = false;
             doctorPicker.IsEnabled = false;
         }
 
@@ -72,14 +76,11 @@ namespace DixionClinic
             visits = JsonConvert.DeserializeObject<Visit[]>(resVis);
         }
 
-        void GetDocAndVis()
+        void GetDep()
         {
-            var urlDoc = App.ConnectionString + "api/Doctor";
-            var urlSpec = App.ConnectionString + "api/Specialist";
-            string resDoc = httpClient.GetStringAsync(urlDoc).Result;
-            string resSpec = httpClient.GetStringAsync(urlSpec).Result;
-            specialists = JsonConvert.DeserializeObject<Specialist[]>(resSpec);
-            doctors = JsonConvert.DeserializeObject<Doctor[]>(resDoc);
+            var urlDep = App.ConnectionString + "api/Departament";
+            string resDep = httpClient.GetStringAsync(urlDep).Result;
+            deps = JsonConvert.DeserializeObject<Department[]>(resDep);
             GetVisits();
         }
 
@@ -91,8 +92,10 @@ namespace DixionClinic
                 timePicker.ItemsSource = null;
                 return;
             }
-            var currentDoc = specPicker.SelectedItem as Specialist;
-            var arrayOfBuisyTime = currentDoc?.Visits?.Where(a => a.Day == datePicker.Date);
+
+            var currentSpec = (doctorPicker.SelectedItem as Doctor).Specialists.Where(
+              a => a.DepartamentId == (depPicker.SelectedItem as Department).Id) as Specialist;
+            var arrayOfBuisyTime = visits.Where(a => a.SpecialistId == currentSpec.Id && a.Day == datePicker.Date).ToArray();
             if (arrayOfBuisyTime != null)
             {
                 foreach (var visit in arrayOfBuisyTime)
@@ -103,18 +106,20 @@ namespace DixionClinic
             timePicker.ItemsSource = timeSpans.Except(buisyTime).ToArray();
         }
 
-        private void SpecPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void DepPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            datePicker.IsEnabled = true;
-            SelectDateAndTime(datePicker.Date);
-            timePicker.IsEnabled = true;
+            var url = App.ConnectionString + $"api/Departament?name={(depPicker.SelectedItem as Department).Name}";
+            string res = httpClient.GetStringAsync(url).Result;
+            doc = JsonConvert.DeserializeObject<Doctor[]>(res);
+            doctorPicker.ItemsSource = doc;
+            doctorPicker.IsEnabled = true;
         }
 
         private void DoctorPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var doc = doctorPicker.SelectedItem as Doctor;
-            specPicker.IsEnabled = true;
-            specPicker.ItemsSource = specialists.Where(a => a.DoctorId == doc.Id).ToArray();
+            datePicker.IsEnabled = true;
+            SelectDateAndTime(datePicker.Date);
+            timePicker.IsEnabled = true;
         }
 
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)

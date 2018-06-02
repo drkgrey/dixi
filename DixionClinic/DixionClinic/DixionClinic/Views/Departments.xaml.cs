@@ -32,7 +32,7 @@ namespace DixionClinic
             var item = e.Item as Department;
             if (item == null)
                 return;
-            Navigation.PushAsync(new Specialists(item.Id));
+            Navigation.PushAsync(new Specialists(item.Name, item.Id));
             ((ListView)sender).SelectedItem = null;
         }
     }

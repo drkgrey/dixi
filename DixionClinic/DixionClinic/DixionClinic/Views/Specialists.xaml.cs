@@ -14,25 +14,29 @@ namespace DixionClinic
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Specialists : ContentPage
 	{
-		public Specialists(int id)
+        int depId;
+
+		public Specialists(string name, int id)
 		{
-			InitializeComponent ();
+            InitializeComponent();
+
+            depId = id;
+
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            var url = App.ConnectionString + "api/Specialist";
+            var url = App.ConnectionString + $"api/Departament?name={name}";
             string res = httpClient.GetStringAsync(url).Result;
-            var tmp = JsonConvert.DeserializeObject<Specialist[]>(res);
-            var spec = tmp.Where(e => e.DepartamentId == id).ToArray();
+            var spec = JsonConvert.DeserializeObject<Doctor[]>(res);
             specList.ItemsSource = spec;
             specList.ItemTapped += SpecListItemTapped;
 		}
 
         private void SpecListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = e.Item as Specialist;
+            var item = e.Item as Doctor;
             if (item == null)
                 return;
-            Navigation.PushAsync(new DoctorView(item.DoctorId, item.Id));
+            Navigation.PushAsync(new DoctorView(item.Id, depId));
             ((ListView)sender).SelectedItem = null;
         }
     }

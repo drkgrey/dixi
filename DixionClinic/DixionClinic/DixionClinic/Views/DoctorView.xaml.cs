@@ -15,7 +15,7 @@ namespace DixionClinic
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DoctorView : ContentPage
 	{
-		public DoctorView(int id,int specId)
+		public DoctorView(int id,int depId)
 		{
 			InitializeComponent ();
             HttpClient httpClient = new HttpClient();
@@ -28,7 +28,14 @@ namespace DixionClinic
             info.Text = doc.Info;
             photo.Source = ImageSource.FromStream(() => new MemoryStream(doc.Photo));
 
-            sign.Clicked += (s, e) => { Navigation.PushAsync(new Reception(specId)); };
+            sign.Clicked += (s, e) => { Navigation.PushAsync(new Reception(depId, id)); };
         }
-	}
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            info.IsVisible = !info.IsVisible;
+            if (show.Text == "Показать") show.Text = "Скрыть";
+            else show.Text = "Показать";
+        }
+    }
 }

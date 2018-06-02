@@ -4,12 +4,14 @@
              x:Class="DixionClinic.Reception" Title="Запись на прием">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Выберите врача" FontAttributes="Bold" FontSize="Large" 
+            <Label Text="Выберите отделение" FontAttributes="Bold" FontSize="Large" 
                    Margin="10,20,0,5" />
+            <Picker x:Name="depPicker" HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}"
+                    SelectedIndexChanged="DepPicker_SelectedIndexChanged" IsEnabled="True"/>
+            <Label Text="Выберите врача" FontAttributes="Bold" FontSize="Large" 
+                   Margin="10,10,0,5" />
             <Picker x:Name="doctorPicker" HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}"
-                    SelectedIndexChanged="DoctorPicker_SelectedIndexChanged"/>
-            <Picker x:Name="specPicker" HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding Name}"
-                    SelectedIndexChanged="SpecPicker_SelectedIndexChanged" IsEnabled="False"/>
+                    SelectedIndexChanged="DoctorPicker_SelectedIndexChanged" IsEnabled="False"/>
             <Label Text="Выберите дату" FontAttributes="Bold" FontSize="Large" 
                    Margin="10,10,0,5"/>
             <DatePicker x:Name="datePicker" HorizontalOptions="FillAndExpand" Format="D"
