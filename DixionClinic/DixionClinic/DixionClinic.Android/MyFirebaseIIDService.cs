@@ -2,6 +2,9 @@
 using Android.App;
 using Firebase.Iid;
 using Android.Util;
+using System.Net;
+using Firebase.Auth;
+using Newtonsoft.Json;
 
 namespace DixionClinic.Droid
 {
@@ -21,6 +24,11 @@ namespace DixionClinic.Droid
         void SendRegistrationToServer(string token)
         {
             // сюда пост запрос с отправкой токена и мыла
+            var email = FirebaseAuth.Instance.CurrentUser.Email;
+            var request = WebRequest.Create("arkonlab.website/api/Auths") as HttpWebRequest;
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
         }
     }
 }
