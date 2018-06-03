@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DixionClinic.SignUp" Title="Регистрация" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="UserName" Placeholder="Введите имя..." PlaceholderColor="Gray" Margin="10,30,0,0"
+                   HorizontalOptions="FillAndExpand" Keyboard="Default"/>
+            <Entry x:Name="UserSecondName" Placeholder="Введите фамилию..." PlaceholderColor="Gray" Margin="10,10,0,0"
+                   HorizontalOptions="FillAndExpand" Keyboard="Text"/>
+            <Entry x:Name="UserThirdName" Placeholder="Введите отчество" PlaceholderColor="Gray" Margin="10,10,0,0"
+                   HorizontalOptions="FillAndExpand" Keyboard="Chat"/>
+            <Entry x:Name="UserEmail" Placeholder="Введите email..."  PlaceholderColor="Gray" Margin="10,10,0,0"
+                   HorizontalOptions="FillAndExpand" Keyboard="Email"/>
+            <Label x:Name="ErrorMessageWrongEmail" Text="Неверный формат email!" TextColor="Red" FontSize="Default"
+                   Margin="10,0,0,0" IsVisible="False"/>
+            <Label x:Name="ErrorMessageEmailAlreadyExists" Text="Такой email уже зарегистрирован!" TextColor="Red" FontSize="Default"
+                   Margin="10,0,0,0" IsVisible="False"/>
+            <Entry x:Name="UserPass" Placeholder="Введите пароль..."  PlaceholderColor="Gray" Margin="10,10,0,0" IsPassword="True"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label Text="Длина пароля должна быть не менее 8 символов" TextColor="Gray" FontSize="Default" Margin="10,5,0,0"/>
+            <Label x:Name="ShortPass" Text="Пароль слишком короткий!" TextColor="Red" FontSize="Default" Margin="10,5,0,0" IsVisible="False"/>
+            <Entry x:Name="ConfirmPass" Placeholder="Подтвердите пароль..."  PlaceholderColor="Gray" Margin="10,10,0,0" IsPassword="True"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label x:Name="ErrorMessagePass" Text="Пароли не совпадают!" TextColor="Red" FontSize="Default" Margin="10,0,0,0" IsVisible="False"/>
+            <Entry x:Name="Phone" Placeholder="Введите ваш телефон..." PlaceholderColor="Gray" Margin="10,10,0,0"
+                   HorizontalOptions="FillAndExpand" Keyboard="Telephone"/>
+            <Button x:Name="SignUpButton" Text="Зарегистрироваться" TextColor="White" BackgroundColor="MediumBlue"
+                    FontSize="Medium" HeightRequest="70" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

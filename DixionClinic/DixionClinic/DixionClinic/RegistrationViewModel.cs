@@ -54,7 +54,7 @@ namespace DixionClinic
 
         void GoToSignUpPage()
         {
-
+            Navigation.PushAsync(new SignUp());
         }
     }
 }

@@ -30,7 +30,8 @@
                     <TapGestureRecognizer Command="{Binding ToForgetPassPage}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Button Grid.Row="6" Text="Зарегистрироваться" BackgroundColor="LightGray" HeightRequest="70" FontSize="Medium" VerticalOptions="EndAndExpand"/>
+            <Button Grid.Row="6" Text="Зарегистрироваться" BackgroundColor="LightGray" HeightRequest="70" FontSize="Medium" VerticalOptions="EndAndExpand"
+                    Command="{Binding ToSignUpPage}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
