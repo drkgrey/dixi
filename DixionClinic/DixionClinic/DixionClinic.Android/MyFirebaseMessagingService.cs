@@ -5,38 +5,46 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
+using Android.Media;
+using Android.Util;
 using Android.Widget;
 using Firebase.Messaging;
 using Android.Graphics;
+using System.Collections.Generic;
 
 namespace DixionClinic.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
-    class MyFireMessagingService : FirebaseMessagingService
+    public class MyFirebaseMessagingService : FirebaseMessagingService
     {
+        const string TAG = "MyFirebaseMsgService";
         public override void OnMessageReceived(RemoteMessage message)
         {
-            base.OnMessageReceived(message);
-            SendNotificatios(message.GetNotification().Body, message.GetNotification().Title);
+            Log.Debug(TAG, "From: " + message.From);
+            Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
+            SendNotification(message.GetNotification().Body, message.Data);
         }
-        public void SendNotificatios(string body, string Header)
+
+        void SendNotification(string messageBody, IDictionary<string, string> data)
         {
-            Notification.Builder builder = new Notification.Builder(this);
-            builder.SetSmallIcon(Resource.Drawable.icon);
             var intent = new Intent(this, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
-            PendingIntent pendingIntent = PendingIntent.GetActivity(this, 0, intent, 0);
-            builder.SetContentIntent(pendingIntent);
-            builder.SetLargeIcon(BitmapFactory.DecodeResource(Resources, Resource.Drawable.icon));
-            builder.SetContentTitle(Header);
-            builder.SetContentText(body);
-            builder.SetDefaults(NotificationDefaults.Sound);
-            builder.SetAutoCancel(true);
-            NotificationManager notificationManager = (NotificationManager)GetSystemService(NotificationService);
-            notificationManager.Notify(1, builder.Build());
+            foreach (string key in data.Keys)
+            {
+                intent.PutExtra(key, data[key]);
+            }
+            var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
+
+            var notificationBuilder = new Notification.Builder(this)
+                .SetSmallIcon(Resource.Drawable.icon)
+                .SetContentTitle("FCM Message")
+                .SetContentText(messageBody)
+                .SetAutoCancel(true)
+                .SetContentIntent(pendingIntent);
+
+            var notificationManager = NotificationManager.FromContext(this);
+            notificationManager.Notify(0, notificationBuilder.Build());
         }
     }
 }

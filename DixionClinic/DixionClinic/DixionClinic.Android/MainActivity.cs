@@ -20,6 +20,15 @@ namespace DixionClinic.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            if (Intent.Extras != null)
+            {
+                foreach (var key in Intent.Extras.KeySet())
+                {
+                    var value = Intent.Extras.GetString(key);
+                    Log.Debug("Key: {0} Value: {1}", key, value);
+                }
+            }
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

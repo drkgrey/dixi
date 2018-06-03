@@ -3,7 +3,7 @@ using Android.App;
 using Firebase.Iid;
 using Android.Util;
 
-namespace FCMClient
+namespace DixionClinic.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
@@ -20,7 +20,7 @@ namespace FCMClient
 
         void SendRegistrationToServer(string token)
         {
-            // Add custom implementation, as needed.
+            // сюда пост запрос с отправкой токена и мыла
         }
     }
 }
