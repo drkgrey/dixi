@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App;
@@ -11,11 +13,14 @@ using Android.Views;
 using Android.Widget;
 using Firebase.Auth;
 using Firebase.Iid;
+using Newtonsoft.Json;
 
 namespace DixionClinic.Droid
 {
-    class FirebaseAutenticator: IFirebaseAuthenticator 
+    class FirebaseAutenticator : IFirebaseAuthenticator
     {
+        Random rnd = new Random();
+
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
             var user = await FirebaseAuth.Instance.
@@ -28,6 +33,27 @@ namespace DixionClinic.Droid
         public string GetDeviceToken()
         {
             return FirebaseInstanceId.Instance.Token;
+        }
+
+        public async void SendRegistrationToServer(string token)
+        {
+            var email = FirebaseAuth.Instance.CurrentUser.Email;
+            var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
+            byte[] byteArray = Encoding.UTF8.GetBytes(data);
+            request.ContentLength = byteArray.Length;
+            using (Stream dataStream = request.GetRequestStream())
+            {
+                dataStream.Write(byteArray, 0, byteArray.Length);
+            }
+            WebResponse response = await request.GetResponseAsync();
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream)) { }
+            }
+            response.Close();
         }
     }
 }

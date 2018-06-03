@@ -9,5 +9,6 @@ namespace DixionClinic
     {
         Task<string> LoginWithEmailPassword(string email, string password);
         string GetDeviceToken();
+        void SendRegistrationToServer(string token);
     }
 }

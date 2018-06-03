@@ -16,6 +16,8 @@ namespace DixionClinic
         public string Password { get => Pass.Text; }
         public bool IsVisibleValidDataLabel { set => IsValidData.IsVisible = value; }
         public Page Page => this;
+        public bool IndicatorIsVisible { set => loadIndicator.IsVisible = value; }
+        public bool BttnSignIsVisible { set => signBttn.IsVisible = value; }
 
         public Registration (IFirebaseAuthenticator authenticator)
 		{

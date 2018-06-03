@@ -23,7 +23,7 @@
             <Label x:Name="IsValidData"  Grid.Row="3" TextColor="Red" Text="Неверный логин или пароль!"
                FontSize="Medium"
                IsVisible="False" />
-            <Button Grid.Row="4" Text="Войти" FontSize="Medium" Command="{Binding ToHomePage}" HeightRequest="60" BackgroundColor="MediumBlue" TextColor="White"/>
+            <Button  x:Name="signBttn"  Grid.Row="4" Text="Войти" FontSize="Medium" Command="{Binding ToHomePage}" HeightRequest="60" BackgroundColor="MediumBlue" TextColor="White"/>
             <Label Grid.Row="5" Text="Забыли логин или пароль?" TextColor="Gray" FontSize="Medium" x:Name="delThis"
                HorizontalOptions="CenterAndExpand">
                 <Label.GestureRecognizers>
@@ -32,6 +32,7 @@
             </Label>
             <Button Grid.Row="6" Text="Зарегистрироваться" BackgroundColor="LightGray" HeightRequest="70" FontSize="Medium" VerticalOptions="EndAndExpand"
                     Command="{Binding ToSignUpPage}"/>
+            <ActivityIndicator x:Name="loadIndicator" Color="MediumBlue" Grid.Row="4" IsVisible="False" IsRunning="True"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
