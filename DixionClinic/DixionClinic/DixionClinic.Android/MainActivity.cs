@@ -18,6 +18,8 @@ namespace DixionClinic.Droid
     [Activity(Label = "DixionClinic", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        static int a = 1;
+
         protected override void OnCreate(Bundle bundle)
         {
             if (Intent.Extras != null)
@@ -48,7 +50,7 @@ namespace DixionClinic.Droid
             }
             catch
             {
-                FirebaseApp.InitializeApp(this, options, "1");
+                FirebaseApp.InitializeApp(this, options, $"{a++}");
             }
 
             //var app = FirebaseApp.Instance;
