@@ -26,7 +26,7 @@ namespace DixionClinic.Droid
         {
             // сюда пост запрос с отправкой токена и мыла
             var email = FirebaseAuth.Instance.CurrentUser.Email;
-            var request = WebRequest.Create("arkonlab.website/api/Auths") as HttpWebRequest;
+            var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
             request.Method = "POST";
             request.ContentType = "application/json";
             string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
