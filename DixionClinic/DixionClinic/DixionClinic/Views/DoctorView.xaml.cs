@@ -14,12 +14,31 @@ namespace DixionClinic
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DoctorView : ContentPage
-	{
-		public DoctorView(int id,int depId)
+    {
+        HttpClient httpClient = new HttpClient();
+
+        public DoctorView(int id,int depId)
 		{
 			InitializeComponent ();
-            HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+            DownloadDoctor(id);
+            DownloadFeedBack(id);
+            sign.Clicked += (s, e) => { Navigation.PushAsync(new Reception(depId, id)); };
+        }
+
+        void DownloadFeedBack(int id)
+        {
+            var url = App.ConnectionString + $"api/CommentsSpec/{id}";
+            var res = httpClient.GetStringAsync(url).Result;
+            var comments = JsonConvert.DeserializeObject<Comment[]>(res);
+
+            //Возможно нужно будет скачивать пациентов и привязывать их к комментариям
+
+            commentsList.ItemsSource = comments;
+        }
+
+        void DownloadDoctor(int id)
+        {
             var url = App.ConnectionString + $"api/Doctor/{id}";
             string res = httpClient.GetStringAsync(url).Result;
             Doctor doc = JsonConvert.DeserializeObject<Doctor>(res);
@@ -27,8 +46,6 @@ namespace DixionClinic
             cat.Text = doc.Category;
             info.Text = doc.Info;
             photo.Source = ImageSource.FromStream(() => new MemoryStream(doc.Photo));
-
-            sign.Clicked += (s, e) => { Navigation.PushAsync(new Reception(depId, id)); };
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -36,6 +53,13 @@ namespace DixionClinic
             info.IsVisible = !info.IsVisible;
             if (show.Text == "Показать") show.Text = "Скрыть";
             else show.Text = "Показать";
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            commentsList.IsVisible = !commentsList.IsVisible;
+            if (showFeedBack.Text == "Показать") showFeedBack.Text = "Скрыть";
+            else showFeedBack.Text = "Показать";
         }
     }
 }

@@ -10,7 +10,6 @@ using Android.Util;
 using Android.Widget;
 using Firebase.Messaging;
 using Android.Graphics;
-using System.Collections.Generic;
 
 namespace DixionClinic.Droid
 {

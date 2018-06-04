@@ -19,9 +19,14 @@ namespace DixionClinic
         bool isValidEmail = false;
         bool isValidPass = false;
 
-        public SignUp ()
+        IFirebaseAuthenticator firebaseAuthenticator;
+
+        public SignUp (IFirebaseAuthenticator authenticator)
 		{
 			InitializeComponent ();
+
+            firebaseAuthenticator = authenticator;
+
             UserEmail.TextChanged += UserEmail_TextChanged;
             UserPass.TextChanged += UserPass_TextChanged;
             ConfirmPass.Completed += ConfirmPass_Completed;
@@ -31,11 +36,13 @@ namespace DixionClinic
         private void SignUpButton_Clicked(object sender, EventArgs e)
         {
             if (isValidPass && isValidEmail &&
-                String.IsNullOrWhiteSpace(Phone.Text)
-                && String.IsNullOrWhiteSpace(UserName.Text)
-                && String.IsNullOrWhiteSpace(UserSecondName.Text)
-                && String.IsNullOrWhiteSpace(UserThirdName.Text))
+                !String.IsNullOrWhiteSpace(Phone.Text)
+                && !String.IsNullOrWhiteSpace(UserName.Text)
+                && !String.IsNullOrWhiteSpace(UserSecondName.Text))
             {
+                firebaseAuthenticator.UserSignUp(UserEmail.Text, UserPass.Text, UserName.Text, UserSecondName.Text, UserThirdName.Text);
+                App.Sender.SignUser($"{UserName.Text} {UserSecondName.Text} {UserThirdName.Text}",
+                    UserEmail.Text, int.Parse(Phone.Text), App.DeviceToken);
                 DisplayAlert("Успешно", "Регистрация успешно завершена. Теперь вы можете войти в приложеие", "ОК");
                 Navigation.PopAsync();
             }
@@ -53,7 +60,7 @@ namespace DixionClinic
 
         private void UserPass_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ShortPass.IsVisible = UserPass.Text.Length <= 8;
+            ShortPass.IsVisible = UserPass.Text.Length < 8;
             isValidPass = !ShortPass.IsVisible;
         }
 

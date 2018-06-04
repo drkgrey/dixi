@@ -19,12 +19,17 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="15,10, 0, 10" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="8"/>
+                            </Grid.RowDefinitions>
                             <Label VerticalOptions="FillAndExpand" 
                                    VerticalTextAlignment="Start" 
-                                   Text="{Binding Title}" 
-                                   FontSize="Large"/>
-                        </StackLayout>
+                                   Text="{Binding Title}" Margin="10"
+                                   FontSize="Large" Grid.Row="1"/>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

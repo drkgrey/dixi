@@ -10,12 +10,17 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
-                                <Label VerticalOptions="FillAndExpand" 
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="10"/>
+                                </Grid.RowDefinitions>
+                                <Label VerticalOptions="CenterAndExpand" 
                                    VerticalTextAlignment="Center" 
-                                   Text="{Binding Name}" 
+                                   Text="{Binding Name}" Grid.Row="1" Margin="10"
                                    FontSize="Large"/>
-                            </StackLayout>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

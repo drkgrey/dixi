@@ -17,7 +17,7 @@ namespace DixionClinic
 
         IRegistration regInfo;
         IFirebaseAuthenticator firebaseAuthenticator;
-
+        
         class Auth
         {
             public int Id { get; set; }
@@ -51,7 +51,12 @@ namespace DixionClinic
                 var url = App.ConnectionString + $"api/Auths?email={regInfo.Login}";
                 string res = await httpClient.GetStringAsync(url);
                 auth = JsonConvert.DeserializeObject<Auth>(res);
-                if (auth == null) firebaseAuthenticator.SendRegistrationToServer(firebaseAuthenticator.GetDeviceToken());
+                if (auth == null)
+                    App.Sender.SignAuth(regInfo.Login, firebaseAuthenticator.GetDeviceToken());
+                else if (auth.Token != App.DeviceToken)
+                {
+                    //Тут нужен PUT запрос !!!!
+                }
             }
             catch
             {
@@ -72,7 +77,7 @@ namespace DixionClinic
 
         void GoToSignUpPage()
         {
-            Navigation.PushAsync(new SignUp());
+            Navigation.PushAsync(new SignUp(firebaseAuthenticator));
         }
     }
 }

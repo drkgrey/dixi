@@ -30,6 +30,15 @@ namespace DixionClinic.Droid
             return token.Token;
         }
 
+        public async void UserSignUp(string email, string pass, string name, string sName, string tName)
+        {
+            var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, pass);
+            var userProfileChangeRequest = new UserProfileChangeRequest.Builder()
+                .SetDisplayName($"{name} {sName} {tName}")
+                .Build();
+            user.User.UpdateProfile(userProfileChangeRequest);
+        }
+
         public string GetDeviceToken()
         {
             return FirebaseInstanceId.Instance.Token;
@@ -37,23 +46,30 @@ namespace DixionClinic.Droid
 
         public async void SendRegistrationToServer(string token)
         {
-            var email = FirebaseAuth.Instance.CurrentUser.Email;
-            var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
-            byte[] byteArray = Encoding.UTF8.GetBytes(data);
-            request.ContentLength = byteArray.Length;
-            using (Stream dataStream = request.GetRequestStream())
-            {
-                dataStream.Write(byteArray, 0, byteArray.Length);
-            }
-            WebResponse response = await request.GetResponseAsync();
-            using (Stream stream = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stream)) { }
-            }
-            response.Close();
+            //Пока не знаю, нужен ли этот метод
+
+            //var email = FirebaseAuth.Instance.CurrentUser.Email;
+            //var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
+            //request.Method = "POST";
+            //request.ContentType = "application/json";
+            //string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
+            //byte[] byteArray = Encoding.UTF8.GetBytes(data);
+            //request.ContentLength = byteArray.Length;
+            //using (Stream dataStream = request.GetRequestStream())
+            //{
+            //    dataStream.Write(byteArray, 0, byteArray.Length);
+            //}
+            //WebResponse response = await request.GetResponseAsync();
+            //using (Stream stream = response.GetResponseStream())
+            //{
+            //    using (StreamReader reader = new StreamReader(stream)) { }
+            //}
+            //response.Close();
+        }
+
+        void CreateUser()
+        {
+            //FIXME!
         }
     }
 }
