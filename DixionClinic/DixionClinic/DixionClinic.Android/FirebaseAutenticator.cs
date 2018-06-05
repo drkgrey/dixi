@@ -44,32 +44,33 @@ namespace DixionClinic.Droid
             return FirebaseInstanceId.Instance.Token;
         }
 
-        public async void SendRegistrationToServer(string token)
-        {
-            //Пока не знаю, нужен ли этот метод
+        //public async void SendRegistrationToServer(string token)
+        //{
+        //    Пока не знаю, нужен ли этот метод
 
-            //var email = FirebaseAuth.Instance.CurrentUser.Email;
-            //var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
-            //request.Method = "POST";
-            //request.ContentType = "application/json";
-            //string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
-            //byte[] byteArray = Encoding.UTF8.GetBytes(data);
-            //request.ContentLength = byteArray.Length;
-            //using (Stream dataStream = request.GetRequestStream())
-            //{
-            //    dataStream.Write(byteArray, 0, byteArray.Length);
-            //}
-            //WebResponse response = await request.GetResponseAsync();
-            //using (Stream stream = response.GetResponseStream())
-            //{
-            //    using (StreamReader reader = new StreamReader(stream)) { }
-            //}
-            //response.Close();
-        }
+        //    var email = FirebaseAuth.Instance.CurrentUser.Email;
+        //    var request = WebRequest.Create("https://arkonlab.website/api/Auths") as HttpWebRequest;
+        //    request.Method = "POST";
+        //    request.ContentType = "application/json";
+        //    string data = JsonConvert.SerializeObject(new { Token = token, Email = email });
+        //    byte[] byteArray = Encoding.UTF8.GetBytes(data);
+        //    request.ContentLength = byteArray.Length;
+        //    using (Stream dataStream = request.GetRequestStream())
+        //    {
+        //        dataStream.Write(byteArray, 0, byteArray.Length);
+        //    }
+        //    WebResponse response = await request.GetResponseAsync();
+        //    using (Stream stream = response.GetResponseStream())
+        //    {
+        //        using (StreamReader reader = new StreamReader(stream)) { }
+        //    }
+        //    response.Close();
+        //}
 
-        void CreateUser()
+        public string GetCurrentUserEmail()
         {
             //FIXME!
+            return FirebaseAuth.Instance.CurrentUser.Email;
         }
     }
 }

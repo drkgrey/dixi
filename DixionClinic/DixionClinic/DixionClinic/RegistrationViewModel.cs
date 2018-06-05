@@ -43,9 +43,9 @@ namespace DixionClinic
             {
                 token = await firebaseAuthenticator.LoginWithEmailPassword(regInfo.Login, regInfo.Password);
                 //Использовать страницу с индикатором загрузки
-                regInfo.BttnSignIsVisible = false;
                 regInfo.IndicatorIsVisible = true;
-                //
+                regInfo.Disable();
+                //                
                 HttpClient httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
                 var url = App.ConnectionString + $"api/Auths?email={regInfo.Login}";
@@ -57,6 +57,7 @@ namespace DixionClinic
                 {
                     //Тут нужен PUT запрос !!!!
                 }
+                //await App.GetPatient(regInfo.Login);
             }
             catch
             {

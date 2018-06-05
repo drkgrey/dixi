@@ -15,7 +15,13 @@ namespace DixionClinic
         public MainPage()
         {
             InitializeComponent();
+            InitUsr();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+        }
+
+        async void InitUsr()
+        {
+            await App.GetPatient(App.FirebaseAuth.GetCurrentUserEmail());
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

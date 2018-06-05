@@ -3,10 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DixionClinic.PersonalCabinet" Title="Личный кабинет">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Данные профиля: " FontSize="Large" FontAttributes="Bold" Margin="0,20,0,10" HorizontalOptions="Center"/>
+                <Label x:Name="name" Margin="10" FontSize="Medium"/>
+                <Button x:Name="changeProfile" Text="Сменить профиль" TextColor="White" BackgroundColor="MediumBlue" Margin="10"/>
+                <Label Text="Данные аккаунта: " FontSize="Large" FontAttributes="Bold" Margin="0,20,0,10" HorizontalOptions="Center"/>
+                <Label x:Name="email" Margin="10" FontSize="Medium"/>
+                <Label x:Name="phone" Margin="10" FontSize="Medium"/>
+                <Button x:Name="editAccInfo" Text="Редактировать данные" TextColor="White" BackgroundColor="MediumBlue" Margin="10"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Ваши записи на прием" FontSize="Medium" FontAttributes="Bold" Margin="10,10,0,20"/>
+                    <Label x:Name="showVisits" Text="Показать" TextColor="Black" FontSize="Medium" FontAttributes="Italic" Margin="20,10,0,20">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowVisits"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <ListView x:Name="visitsList" IsVisible="False"
+              SeparatorVisibility="Default" 
+              HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <!--Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Name}" 
+                                   FontSize="Large" Margin="5" Grid.Row="1"/-->
+                                    <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Day}" 
+                                   FontSize="Medium" Margin="5" Grid.Row="1"/>
+                                    <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Hour}" 
+                                   FontSize="Medium" Margin="5" Grid.Row="1"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Ваши отзывы" FontSize="Medium" FontAttributes="Bold" Margin="10,10,0,20"/>
+                    <Label x:Name="showComments" Text="Показать" TextColor="Black" FontSize="Medium" FontAttributes="Italic" Margin="20,10,0,20">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowComments"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <ListView x:Name="commentsList" IsVisible="False"
+              SeparatorVisibility="Default" 
+              HasUnevenRows="true">
+                    <ListView.Header>
+                        <Button x:Name="makeFeedBack" Text="Оставить отзыв" TextColor="White" BackgroundColor="MediumBlue"
+                    FontSize="Medium"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Text}" 
+                                   FontSize="Large" Margin="5"/>
+                                    <!--Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding About}" 
+                                   FontSize="Medium" Margin="5"/-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

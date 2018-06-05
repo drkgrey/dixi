@@ -24,6 +24,7 @@ namespace DixionClinic
             DownloadDoctor(id);
             DownloadFeedBack(id);
             sign.Clicked += (s, e) => { Navigation.PushAsync(new Reception(depId, id)); };
+            makeFeedBack.Clicked += (s, e) => { Navigation.PushModalAsync(new MakeFeedBackPage(id)); };
         }
 
         void DownloadFeedBack(int id)

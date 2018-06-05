@@ -46,10 +46,6 @@
                                    VerticalTextAlignment="Center" 
                                    Text="{Binding Text}" 
                                    FontSize="Medium" FontAttributes="Italic"/>
-                                    <!--Label VerticalOptions="CenterAndExpand" 
-                                   VerticalTextAlignment="Center" 
-                                   Text="{Binding Name}" 
-                                   FontSize="Default" FontAttributes="Italic"/-->
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

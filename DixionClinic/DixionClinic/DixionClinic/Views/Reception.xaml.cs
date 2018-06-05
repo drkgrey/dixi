@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -128,9 +129,21 @@ namespace DixionClinic
             SelectDateAndTime(date);
         }
 
-        private void Sign_Clicked(object sender, EventArgs e)
+        private async void Sign_Clicked(object sender, EventArgs e)
         {
-
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 25)
+            {
+                Credentials = new System.Net.NetworkCredential("dixiontestmail@gmail.com", "dixi12345678"),
+                EnableSsl = true
+            };
+            string to = "uselessacc63@gmail.com";
+            string from = "dixiontestmail@gmail.com";
+            string subject = "Test SMTP Client.";
+            string body = @"Now you see me... Now you don't...";
+            MailMessage message = new MailMessage(from, to, subject, body);
+            await smtpClient.SendMailAsync(message);
+            await DisplayAlert("Успешно", "Вы отправили заявку на прием. В ближайшее время с вами свяжутся.", "OK");
+            await Navigation.PopAsync();
         }
 
         private void TimePicker_SelectedIndexChanged(object sender, EventArgs e)

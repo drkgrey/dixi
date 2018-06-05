@@ -22,7 +22,7 @@ namespace DixionClinic.Droid
                 if (FirebaseAuth.Instance.CurrentUser.Email != null)
                 {
                     var refreshedToken = FirebaseInstanceId.Instance.Token;
-                    autenticator.SendRegistrationToServer(refreshedToken);
+                    //autenticator.SendRegistrationToServer(refreshedToken);
                 }
             }
             catch { }

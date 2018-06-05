@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DixionClinic
 {
-    class Patient
+    public class Patient
     {
         public int Id { get; set; }
         public int Phone { get; set; }

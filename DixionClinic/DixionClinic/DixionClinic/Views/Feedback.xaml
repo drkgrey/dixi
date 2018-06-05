@@ -4,9 +4,28 @@
              x:Class="DixionClinic.Feedback" Title="Отзыв">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Здесь вы можете видеть отзывы о клинике. Так же можете оставить свой отзыв." Margin="10,20,10,10"
+                   FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <ListView x:Name="commentsList"
+              SeparatorVisibility="Default" 
+              HasUnevenRows="true">
+                <ListView.Header>
+                    <Button x:Name="makeFeedBack" Text="Оставить отзыв о клинике" TextColor="White" BackgroundColor="MediumBlue"
+                    FontSize="Medium"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Text}" 
+                                   FontSize="Large" Margin="5"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

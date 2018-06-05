@@ -8,7 +8,7 @@ namespace DixionClinic
         string Password { get; }
         bool IsVisibleValidDataLabel { set; }
         bool IndicatorIsVisible { set; }
-        bool BttnSignIsVisible { set; }
+        void Disable();
         Page Page { get; }
     }
 }
