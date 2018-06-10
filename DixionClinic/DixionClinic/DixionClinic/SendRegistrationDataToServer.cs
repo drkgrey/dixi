@@ -24,7 +24,7 @@ namespace DixionClinic
             var r = await result.Content.ReadAsStringAsync();
         }
 
-        async void SignPatient(string email, int phone)
+        async void SignPatient(string email, string phone)
         {
             string json = JsonConvert.SerializeObject(new { AuthEmail = email, Phone = phone });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -47,7 +47,7 @@ namespace DixionClinic
             var r = await result.Content.ReadAsStringAsync();
         }
 
-        public void SignUser(string fullName, string email, int phone, string token)
+        public void SignUser(string fullName, string email, string phone, string token)
         {
             SignAuth(email, token);
             SignPatient(email, phone);

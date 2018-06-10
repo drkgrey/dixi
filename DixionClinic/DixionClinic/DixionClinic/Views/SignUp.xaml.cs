@@ -40,9 +40,9 @@ namespace DixionClinic
                 && !String.IsNullOrWhiteSpace(UserName.Text)
                 && !String.IsNullOrWhiteSpace(UserSecondName.Text))
             {
-                firebaseAuthenticator.UserSignUp(UserEmail.Text, UserPass.Text, UserName.Text, UserSecondName.Text, UserThirdName.Text);
                 App.Sender.SignUser($"{UserName.Text} {UserSecondName.Text} {UserThirdName.Text}",
-                    UserEmail.Text, int.Parse(Phone.Text), App.DeviceToken);
+                    UserEmail.Text, Phone.Text, App.DeviceToken);
+                firebaseAuthenticator.UserSignUp(UserEmail.Text, UserPass.Text, UserName.Text, UserSecondName.Text, UserThirdName.Text);
                 DisplayAlert("Успешно", "Регистрация успешно завершена. Теперь вы можете войти в приложеие", "ОК");
                 Navigation.PopAsync();
             }

@@ -34,7 +34,7 @@ namespace DixionClinic
             else if (item.Id == 1)
                 Detail = new NavigationPage(new News()/*Новости и акции*/);
             else if (item.Id == 2)
-                Detail = new NavigationPage(new Reception()/*Запись на прием*/);
+                Detail = new NavigationPage(new Reception(this)/*Запись на прием*/);
             else if (item.Id == 3)
                 Detail = new NavigationPage(new Price()/*Прейскурант*/);
             else if (item.Id == 4)
@@ -42,8 +42,7 @@ namespace DixionClinic
             else if (item.Id == 5)
                 Detail = new NavigationPage(new PersonalCabinet()/*Личный кабинет*/);
             else if (item.Id == 6)
-                Detail = new NavigationPage(new Feedback()/*Отзывы*/);
-
+                Detail = new NavigationPage(new Feedback()/*Отзывы*/);            
             IsPresented = false;
             MasterPage.ListView.SelectedItem = null;
         }

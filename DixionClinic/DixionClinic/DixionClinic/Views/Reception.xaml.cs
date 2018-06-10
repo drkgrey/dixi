@@ -17,6 +17,9 @@ namespace DixionClinic
     {
         HttpClient httpClient = new HttpClient();
 
+        bool flag = false;
+        MainPage mainPage;
+
         TimeSpan start = new TimeSpan(9, 0, 0);
         readonly TimeSpan final = new TimeSpan(18, 00, 00);
         List<TimeSpan> timeSpans = new List<TimeSpan>();
@@ -25,9 +28,11 @@ namespace DixionClinic
         Doctor[] doc;
         Visit[] visits;
 
-        public Reception()
+        public Reception(MainPage page)
         {
             InitializeComponent();
+            mainPage = page;
+            flag = true;
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             GetDep();
             SetTimeArray();
@@ -143,6 +148,7 @@ namespace DixionClinic
             MailMessage message = new MailMessage(from, to, subject, body);
             await smtpClient.SendMailAsync(message);
             await DisplayAlert("Успешно", "Вы отправили заявку на прием. В ближайшее время с вами свяжутся.", "OK");
+            if (flag) mainPage.Detail = new NavigationPage(new News());
             await Navigation.PopAsync();
         }
 

@@ -23,7 +23,7 @@
             <Entry x:Name="ConfirmPass" Placeholder="Подтвердите пароль..."  PlaceholderColor="Gray" Margin="10,10,0,0" IsPassword="True"
                    HorizontalOptions="FillAndExpand"/>
             <Label x:Name="ErrorMessagePass" Text="Пароли не совпадают!" TextColor="Red" FontSize="Medium" Margin="10,0,0,0" IsVisible="False"/>
-            <Entry x:Name="Phone" Placeholder="Введите ваш телефон..." PlaceholderColor="Gray" Margin="10,10,0,0"
+            <Entry x:Name="Phone" Placeholder="Введите ваш телефон..." PlaceholderColor="Gray" Margin="10,10,0,0" Text="42" IsEnabled="False" IsVisible="False"
                    HorizontalOptions="FillAndExpand" Keyboard="Telephone"/>
             <Button x:Name="SignUpButton" Text="Зарегистрироваться" TextColor="White" BackgroundColor="MediumBlue"
                     FontSize="Medium" HeightRequest="70" VerticalOptions="EndAndExpand"/>
